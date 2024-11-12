@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+    <style>
+       footer{
+            position: relative;
+       }
+       hr{
+            float: right;
+            width: 90%;
+            z-index: 0;
+            position:absolute ;
+            top: 40px;
+            right: 0;
+            border: solid rgb(143, 142, 142) 1px;
+        }
+        #logofooter{
+            padding-top: 10px;
+            margin-left: 15px;
+            margin-top:15px ;
+            height: 45px;
+            width: 45px;
+        }
+        </style>  
+</head>
+<body class="backdrop">
+    <!-- navigation bar -->
+    <div class="nav">
+        <header class="header" id="header">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <nav class="navBar">
+                <a href="home.html">Home</a>
+                <a href="Team.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="shop.html">Shop</a>
+                <a href="profile.html" class="userprofile">User Profile</a>
+                <a href="feedback.html" class="active">Feedback</a>
+                <a href="sitemap.html">Site Map</a>
+            </nav>
+        </header>
+    </div>
+    <div>
+        <form action="mailto:tanishq.20231943@iit.ac.lk" method="post" class="feedback">
+            <fieldset class="field">
+                <legend id="title">Feedback</legend>    
+            <label id="label1">
+                First name:</label>
+                <input type="text" name="First name" id="name" placeholder="   Enter your first name" required>
+            <label for="email" id="label2">
+                Email:</label>
+                <input type="email" name="email" id="email" placeholder="   Enter your email" required><br><br>
+
+            <label>Was this your first time visiting?</label>
+           <div id="visitTimes">
+            <label class="radio">Yes <input id="radio1" type="radio" name="visitTime" value="yes" ></label>
+            <label >No  <input id="radio2" type="radio" name="visitTime" value="no" ></label>
+            <span id="result1"></span>
+           </div>
+           <br>
+
+            <label >Was this website informative and easy to navigate through?</label><br>
+             <div id="userExs">
+                <label >Yes </label><input id="radio3" type="radio" name="userEx" value="yes">
+                <label >No </label><input id="radio4" type="radio" name="userEx" value="no">
+             </div> <br>
+
+            <label >*if "No", suggest any improvements for the future</label><br><br>
+            <textarea name="improvements" id="improvements" cols="26" rows="2" placeholder="   Add your message here"></textarea><br><br>
+
+            <label >How satisfied are you with Our services? <br> Choose from a scale of 1 to 5</label>
+            <div id="opinions">
+                <label >1 </label><input id="radio5" type="radio" name="opinion" value="1">
+                <label >2 </label><input id="radio6" type="radio" name="opinion" value="2">
+                <label >3 </label><input id="radio7" type="radio" name="opinion" value="3">
+                <label >4 </label><input id="radio8" type="radio" name="opinion" value="4">
+                <label >5 </label><input id="radio9" type="radio" name="opinion" value="5">
+            </div><br>
+
+            <label >Would you recommend our services?</label><br>
+            <div id="recommends">
+                <label >Yes</label><input id="radio10" type="radio" name="recommend" value="yes">
+                <label >No</label><input id="radio11" type="radio" name="recommend" value="no">
+            </div><br>
+
+            <label >Would you like to recieve updates about the website and any offers?</label><br>
+                <select name="offers" id="updates">
+                    <option value="Yes. via email">Yes. via email</option>
+                    <option value="No">No.</option>
+                </select>
+                <span class="selected"></span>
+            <br><br>
+            <label>Do you Have any additional questions or requests</label><br><br>
+            <textarea name="questions" id="requests" cols="26" rows="3" placeholder="  Add your message here"></textarea><br><br>
+            <input id="submitbtn" class="button" type="submit" onclick="mail()" value="Submit">
+            <span id="email1"></span>
+            </fieldset>
+        </form>
+        <footer>
+            <div id="upperPart">
+                <div id="logofooter">
+                    <img src="images/logofooter.png" alt="logo">
+                </div>
+                <div id="linksfooter">
+                    <a href="index.html" class="active">Home</a> |
+                    <a href="Team.html">About Us</a> |
+                    <a href="gallery.html">Gallery</a> |
+                    <a href="shop.html">Shop</a> | 
+                    <a href="profile.html" class="userprofile">User Profile</a> |
+                    <a href="feedback.html">Feedback</a> |
+                    <a href="sitemap.html">Site Map</a> |
+                </div>
+                <div id="pageEditor">
+                    <a href="editor2.html">Page Editor</a>
+                </div>
+            </div>
+            <hr>
+            <div id="copyright">
+                <p>copyright <sup>&copy;</sup> SEA SENSE</p>
+            </div>
+        </footer>
+    </div>
+    <script src="feedback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init({
+                publicKey: "QeiAwHvF6jwdt42L2",
+            });
+        })();
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>
